@@ -5,9 +5,10 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 
+let i=1;
 const router = express.Router();
 router.get('/', (req, res) => {
-  res.json({message:"Hello From Functions"})
+  res.json({date:i++})
 });
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 router.post('/', (req, res) => res.json({ postBody: req.body }));
